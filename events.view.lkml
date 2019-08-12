@@ -2,7 +2,7 @@ include: "user_properties_generated*"
 include: "events_generated*"
 
 view: events {
-  sql_table_name: `api-project-861613578538.analytics_152286122.events_*` ;;
+  sql_table_name: `api-project-xxxx.analytics_yyyyyy.events_*` ;;
 
     extends: [events_generated,user_properties_generated]
 
