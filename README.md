@@ -24,3 +24,8 @@ Because every Firebase schema has some similarities but different event types an
 4) Copy the results of the _event_properties_ section into _events_generated.view.lkml_ (replace the entire file)
 5) Copy the results of the _user_properties_ section into _user_properties_generated.view.lkml_ (replace the entire file)
 6) World domination.
+
+## Troubleshooting
+* If you have duplicate dimensions with the same name (firebase allows same event name , keys but different types)
+Change the part of events “Event Properties” python code  like this:
+ `print("dimension: "+event_name+"."+key+ "_" + type[0]+" {")`(thanks @nishimix for the fix!)
