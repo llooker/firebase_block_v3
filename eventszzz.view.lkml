@@ -2,7 +2,7 @@ include: "user_properties_generated*"
 include: "events_generated*"
 
 view: events {
-  sql_table_name: `api-project-xxxx.analytics_yyyyyy.events_*` ;;
+  sql_table_name: `firebase-public-project.analytics_153293282.events_*`  ;;
 
     extends: [events_generated,user_properties_generated]
 
@@ -101,6 +101,7 @@ view: events {
     }
 
     dimension: user_id {
+      description: "The user ID set via the setUserId API."
       type: string
       sql: ${TABLE}.user_id ;;
     }
@@ -116,13 +117,14 @@ view: events {
     }
 
     dimension: user_pseudo_id {
+      description: "The pseudonymous id (e.g., app instance ID) for the user."
       type: string
       sql: ${TABLE}.user_pseudo_id ;;
     }
 
-    measure: number_of_players {
+    measure: number_of_users {
       type: count_distinct
-      sql: ${user_id} ;;
+      sql: COALESCE(${user_pseudo_id},${user_id}) ;;
     }
 
     measure: number_of_events {
@@ -161,6 +163,7 @@ view: events {
       sql: CASE
         WHEN ${string_value} is not null then 'string'
         WHEN COALESCE(${int_value},${float_value},${double_value}) is not null then 'number'
+        WHEN ${set_timestamp_micros} is not null then 'timestamp'
         ELSE 'string'
         END;;
     }

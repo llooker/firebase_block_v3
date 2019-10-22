@@ -5,12 +5,12 @@ include: "*.view.lkml"                       # include all views in this project
 
 explore: events {
 
-  always_filter: {
-    filters: {
-      field: event_date
-      value: "last 7 days"
-    }
-  }
+#   always_filter: {
+#     filters: {
+#       field: event_date
+#       value: "last 7 days"
+#     }
+#   }
 
   join: events__event_params {
     sql: LEFT JOIN UNNEST(events.event_params) as events__event_params ;;
