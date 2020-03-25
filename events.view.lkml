@@ -148,6 +148,7 @@ view: events {
   #### end device
 
   dimension: event_bundle_sequence_id {
+    description: "The sequential ID of the bundle in which these events were uploaded."
     hidden: yes
     type: number
     sql: ${TABLE}.event_bundle_sequence_id ;;
