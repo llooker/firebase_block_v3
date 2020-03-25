@@ -280,15 +280,34 @@ view: events {
     sql: ${TABLE}.user_id ;;
   }
 
+  dimension: user_properties {
+    hidden: yes
+    sql: ${TABLE}.user_properties ;;
+  }
+
+  ### user ltv dimensions
+
   dimension: user_ltv {
     hidden: yes
     sql: ${TABLE}.user_ltv ;;
   }
 
-  dimension: user_properties {
-    hidden: yes
-    sql: ${TABLE}.user_properties ;;
+  dimension: currency {
+    group_label: "User LTV"
+    description: "The Lifetime Value (currency) of the user. This field is not populated in intraday tables."
+    type: string
+    sql: ${user_ltv}.currency ;;
   }
+
+  dimension: revenue {
+    group_label: "User LTV"
+    description: "The Lifetime Value (revenue) of the user. This field is not populated in intraday tables."
+    type: number
+    sql: ${user_ltv}.revenue ;;
+  }
+
+ ### end user ltv dimensions
+
 
   dimension: user_pseudo_id {
     description: "The pseudonymous id (e.g., app instance ID) for the user."
@@ -580,18 +599,6 @@ view: events__event_params {
   dimension: value {
     hidden: yes
     sql: ${TABLE}.value ;;
-  }
-}
-
-view: events__user_ltv {
-  dimension: currency {
-    type: string
-    sql: ${TABLE}.currency ;;
-  }
-
-  dimension: revenue {
-    type: number
-    sql: ${TABLE}.revenue ;;
   }
 }
 
