@@ -496,31 +496,37 @@ view: events {
 
 view: events__user_properties__value {
   dimension: double_value {
+    required_fields: [events__user_properties.key]
     type: number
     sql: ${TABLE}.double_value ;;
   }
 
   dimension: float_value {
+    required_fields: [events__user_properties.key]
     type: number
     sql: ${TABLE}.float_value ;;
   }
 
   dimension: int_value {
+    required_fields: [events__user_properties.key]
     type: number
     sql: ${TABLE}.int_value ;;
   }
 
   dimension: set_timestamp_micros {
+    required_fields: [events__user_properties.key]
     type: number
     sql: ${TABLE}.set_timestamp_micros ;;
   }
 
   dimension: string_value {
+    required_fields: [events__user_properties.key]
     type: string
     sql: ${TABLE}.string_value ;;
   }
 
   dimension: type{
+    required_fields: [events__user_properties.key]
     sql: CASE
         WHEN ${string_value} is not null then 'string'
         WHEN COALESCE(${int_value},${float_value},${double_value}) is not null then 'number'
@@ -563,26 +569,31 @@ view: events__traffic_source {
 
 view: events__event_params__value {
   dimension: double_value {
+    required_fields: [events__event_params.key]
     type: number
     sql: ${TABLE}.double_value ;;
   }
 
   dimension: float_value {
+    required_fields: [events__event_params.key]
     type: number
     sql: ${TABLE}.float_value ;;
   }
 
   dimension: int_value {
+    required_fields: [events__event_params.key]
     type: number
     sql: ${TABLE}.int_value ;;
   }
 
   dimension: string_value {
+    required_fields: [events__event_params.key]
     type: string
     sql: ${TABLE}.string_value ;;
   }
 
   dimension: type{
+    required_fields: [events__event_params.key]
     sql: CASE
         WHEN ${string_value} is not null then 'string'
         WHEN COALESCE(${int_value},${float_value},${double_value}) is not null then 'number'
