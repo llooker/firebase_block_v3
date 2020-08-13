@@ -21,7 +21,7 @@ Because every Firebase schema has some similarities but different event types an
 ### Prep Looker Side
 
 1. Start by creating a new project by cloning this public repo: https://docs.looker.com/data-modeling/getting-started/create-projects#cloning_a_public_git_repository
-2. Add your own Git repo, change the connection name and the name of the event table in _events.view.lkml_ push to production.
+2. Add your own Git repo, change the connection name and the name of the event table in _events.view.lkml_ and the datagroup for _sessions.view.lkml_ and push to production.
 3. Create yourself a new API3 key https://docs.looker.com/admin-options/settings/users#api3_keys
 
 ## Run the Python Code to Generate your Model
