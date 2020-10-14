@@ -10,12 +10,13 @@ datagroup: daily {
 
 explore: events {
 
-#   always_filter: {
-#     filters: {
-#       field: event_date
-#       value: "last 7 days"
-#     }
-#   }
+## TO avoid querying the entire database by default, suggest setting up a filter like below, and perhaps limiting GB scanned with 'Max Billing Gigabytes' in the connection
+  always_filter: {
+    filters: {
+      field: event_date
+      value: "last 7 days"
+    }
+  }
 
   join: events__event_params {
     view_label: "Event Properties"

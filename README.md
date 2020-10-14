@@ -33,6 +33,9 @@ Because every Firebase schema has some similarities but different event types an
 5. Copy the results of the _user_properties_ section into _user_properties_generated.view.lkml_ (replace the entire file)
 6. World domination.
 
+## Note on Query Costs
+We are querying the raw events log which might be expensive to query, we've added a _SQL_ALWAYS_WHERE_ clause to the model and only query this year's data for the sessions PDT. Adjust accordingly
+
 ## Troubleshooting
 
 * If you have duplicate dimensions with the same name (firebase allows same event name , keys but different types)
