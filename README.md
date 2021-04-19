@@ -28,7 +28,7 @@ Because every Firebase schema has some similarities but different event types an
 
 1. Download the Firebase Python Notebook and open it with your favorite Notebook runner. I use Google Colab https://github.com/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb or just open it here:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg](https://colab.research.google.com/github/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb]
 
 3. Enter your _base_url_ _client_id_ and _client_secret_  (this is your API3 key)
 4. Run the Python notebook
