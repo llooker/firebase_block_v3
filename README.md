@@ -26,12 +26,14 @@ Because every Firebase schema has some similarities but different event types an
 
 ## Run the Python Code to Generate your Model
 
-1. Download the Firebase Python Notebook and open it with your favorite Notebook runner. I use Google Colab https://github.com/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb
-2. Enter your _base_url_ _client_id_ and _client_secret_  (this is your API3 key)
-3. Run the Python notebook
-4. Copy the results of the _event_properties_ section into _events_generated.view.lkml_ (replace the entire file)
-5. Copy the results of the _user_properties_ section into _user_properties_generated.view.lkml_ (replace the entire file)
-6. World domination.
+1. Download the Firebase Python Notebook and open it with your favorite Notebook runner. I use Google Colab https://github.com/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb or just open it here:
+.. image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb
+3. Enter your _base_url_ _client_id_ and _client_secret_  (this is your API3 key)
+4. Run the Python notebook
+5. Copy the results of the _event_properties_ section into _events_generated.view.lkml_ (replace the entire file)
+6. Copy the results of the _user_properties_ section into _user_properties_generated.view.lkml_ (replace the entire file)
+7. World domination.
 
 ## Note on Query Costs
 We are querying the raw events log which might be expensive to query, we've added a _SQL_ALWAYS_WHERE_ clause to the model and only query this year's data for the sessions PDT. Adjust accordingly
