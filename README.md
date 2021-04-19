@@ -27,8 +27,9 @@ Because every Firebase schema has some similarities but different event types an
 ## Run the Python Code to Generate your Model
 
 1. Download the Firebase Python Notebook and open it with your favorite Notebook runner. I use Google Colab https://github.com/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb or just open it here:
-.. image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/github/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/llooker/firebase_block_v3/blob/master/Firebase_Block_v3.ipynb]
+
 3. Enter your _base_url_ _client_id_ and _client_secret_  (this is your API3 key)
 4. Run the Python notebook
 5. Copy the results of the _event_properties_ section into _events_generated.view.lkml_ (replace the entire file)
