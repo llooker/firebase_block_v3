@@ -16,6 +16,8 @@ Firebase data in BigQuery has incredible analytical potentential, but it's not e
 ## How does it work?
 Because every Firebase schema has some similarities but different event types and user properties, the block will generate a unique schema for your event structure. It uses a Python notebook to connect to Looker's API and query your database and output some lovely LookML.
 
+Please note: The metrics and analysis available from this block are completely independent from dashboard metrics and analytics that included with Firebase. 
+
 ## How do you do use it?
 
 ### Prep Looker Side
